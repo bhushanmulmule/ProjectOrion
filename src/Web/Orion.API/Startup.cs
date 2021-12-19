@@ -22,7 +22,6 @@ namespace Orion.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplication();
-            //services.AddSQLRepository();
             services.AddCosmosRepository(Configuration);
             services.AddThirdPartyServices(Configuration);
 
