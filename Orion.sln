@@ -29,7 +29,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.SQLRepository", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.CosmosRepository", "src\Infrastructure\Orion.CosmosRepository\Orion.CosmosRepository.csproj", "{8F5AAE66-2D01-4268-B012-BFBB8F7FA88D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orion.ThirdPartyServices", "src\Infrastructure\Orion.ThirdPartyServices\Orion.ThirdPartyServices.csproj", "{CC580173-C6D6-439A-A33A-E46190A6F35E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orion.ThirdPartyServices", "src\Infrastructure\Orion.ThirdPartyServices\Orion.ThirdPartyServices.csproj", "{CC580173-C6D6-439A-A33A-E46190A6F35E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C79A18E8-66B5-4A4B-B003-D0E523461586}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
