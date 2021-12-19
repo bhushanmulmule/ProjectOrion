@@ -13,12 +13,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: 'restore'
-      feedsToUse: 'select'
-
-  - script: dotnet build --configuration $(buildConfiguration)
+  - script: dotnet build --configuration $(buildConfiguration) -f net6.0
     displayName: 'dotnet build $(buildConfiguration)'
 
   - task: DotNetCoreCLI@2
