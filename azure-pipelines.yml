@@ -10,9 +10,14 @@ pool:
   vmImage: windows-latest
 
 variables:
-  buildConfiguration: 'Debug'
+  buildConfiguration: 'Release'
 
 steps:
+  - task: DeleteFiles@1
+    inputs:
+      Contents: '*' 
+      RemoveSourceFolder: true
+  
   - task: UseDotNet@2
     inputs:
       version: '6.0.x'
@@ -20,7 +25,7 @@ steps:
   - script: dotnet restore
     displayName: 'dotnet restore'
 
-  - script: dotnet build --configuration $(buildConfiguration) -f net6.0 --no-restore
+  - script: dotnet build --configuration $(buildConfiguration) -f net6.0 --no-restore /m:1
     displayName: 'dotnet build $(buildConfiguration)'
 
   - task: DotNetCoreCLI@2
