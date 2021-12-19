@@ -13,6 +13,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+  - task: UseDotNet@2
+    inputs:
+      version: '6.0.x'
+
   - script: dotnet build --configuration $(buildConfiguration) -f net6.0
     displayName: 'dotnet build $(buildConfiguration)'
 
