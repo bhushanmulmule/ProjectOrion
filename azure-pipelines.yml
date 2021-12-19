@@ -12,12 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-  - task: DeleteFiles@1
-    inputs:
-      Contents: '*' 
-      RemoveSourceFolder: true
-  
+steps:  
   - task: UseDotNet@2
     inputs:
       version: '6.0.x'
