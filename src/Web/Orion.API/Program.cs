@@ -5,6 +5,8 @@ using Orion.CosmosRepository;
 using Orion.ThirdPartyServices;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
 builder.Services.AddApplication();
 builder.Services.AddCosmosRepository(builder.Configuration);
 builder.Services.AddThirdPartyServices(builder.Configuration);
@@ -16,8 +18,11 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Orion.API", Version = "v1" });
 });
 
+
 var app = builder.Build();
 
+
+// Configure the HTTP request pipeline.
 app.UseMiddleware<ErrorHandlerMiddleware>(app.Environment);
 
 app.UseSwagger();
