@@ -15,7 +15,7 @@ namespace Orion.Application.AccountAppLayer.UseCases.UserUseCases.GetUserById
             var user = new GetUserByIdResponse
             {
                 Id = request.Id,
-                Name = "John"
+                Name = "Sam"
             };
 
             return user;
