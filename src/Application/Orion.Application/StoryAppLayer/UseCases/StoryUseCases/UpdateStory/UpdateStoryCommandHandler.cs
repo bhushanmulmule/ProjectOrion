@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Orion.Application.StoryAppLayer.DTOs;
 using Orion.Application.StoryAppLayer.Interfaces;
+using Orion.Domain.StoryDomain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +23,8 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.UpdateStory
         public async Task<StoryDto> Handle(UpdateStoryCommand request, CancellationToken cancellationToken)
         {
             var story = await _storyRepository.GetByIdAsync(request.Id);
-
-            story.Text = request.Text;
+                        
+            story.UpdateText(request.Text);
 
             var updatedStory = await _storyRepository.UpdateAsync(story);
 
