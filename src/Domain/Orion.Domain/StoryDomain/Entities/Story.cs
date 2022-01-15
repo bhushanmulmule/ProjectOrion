@@ -14,10 +14,19 @@ namespace Orion.Domain.StoryDomain.Entities
         public string Text { get; private set; }
         public string[] Images { get; private set; }
 
-        public Story(string text, string[] images)
+        private Story()
         {
-            Text = DoesTextContainsBadWords(text) ? throw new BusinessRuleValidationException(ErrorMessages.DetectedBadWordsInText) : text;
-            Images = images;
+            Text = string.Empty;
+        }
+
+        public static Story Create(string text, string[]? images = null)
+        {
+            var story = new Story();
+
+            story.Text = story.DoesTextContainsBadWords(text) ? throw new BusinessRuleValidationException(ErrorMessages.DetectedBadWordsInText) : text;
+            story.Images = images;
+
+            return story;
         }
 
         public void UpdateText(string text)
