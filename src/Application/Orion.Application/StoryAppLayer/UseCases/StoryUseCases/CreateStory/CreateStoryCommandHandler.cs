@@ -22,7 +22,7 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.CreateStory
 
         public async Task<StoryDto> Handle(CreateStoryCommand request, CancellationToken cancellationToken)
         {
-            var story = new Story(request.Text, request.Images);
+            var story = Story.Create(request.Text, request.Images);
 
             var newStory = await _storyRepository.AddAsync(story);
 
