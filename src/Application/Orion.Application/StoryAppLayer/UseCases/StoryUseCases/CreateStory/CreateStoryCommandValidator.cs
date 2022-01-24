@@ -11,7 +11,7 @@ namespace Orion.Application.StoryAppLayer.UseCases.StoryUseCases.CreateStory
     {
         public CreateStoryCommandValidator()
         {
-            RuleFor(v => v.Text).NotNull().NotEmpty();
+            RuleFor(v => v.Text).NotNull().NotEmpty().MaximumLength(300);
         }
     }
 }
